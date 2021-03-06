@@ -1,0 +1,73 @@
+Admin Table:
+
+CREATE TABLE admins
+(   
+    admin_id int AUTO_INCREMENT PRIMARY KEY,
+    admin_fname varchar(50),
+    admin_uname varchar(50) UNIQUE,
+    admin_email varchar(50) UNIQUE,
+    admin_phone varchar(20) UNIQUE,
+    admin_cnic varchar(20) UNIQUE,
+    admin_password varchar(50),
+    admin_fathername varchar(50),
+    admin_gender varchar(10),
+    admin_dob date,
+    admin_image varchar(500),
+    createDT timestamp,
+    admin_address varchar(500),
+    status int  
+)
+
+Agents Table
+
+CREATE TABLE agents ( agent_id int AUTO_INCREMENT PRIMARY KEY, agent_fname varchar(50), agent_uname varchar(50) UNIQUE, agent_email varchar(50) UNIQUE, agent_phone varchar(20) UNIQUE, agent_cnic varchar(20) UNIQUE, agent_password varchar(50), agent_fathername varchar(50), agent_gender varchar(10), agent_dob date, agent_image varchar(500), createDT timestamp, createBY int, agent_address varchar(500), status int )
+
+
+Status Table:
+CREATE TABLE status 
+(
+	status_id int,
+    status_type varchar(20)
+)
+
+
+Packages Table
+
+create table packages
+(
+    pkg_id int auto_increment PRIMARY KEY,
+    pkg_name varchar(200),
+    pkg_createBY int,
+    pkg_createDT timestamp,
+    pkg_from varchar(50),
+    pkg_to varchar(50),
+    pkg_price varchar(11),
+    pkg_day varchar(10),
+    pkg_night varchar(10),
+    pkg_image varchar(1000),
+    pkg_description varchar(100),
+    pkg_person varchar(10)
+)
+
+client query table (Client queries from WEB)
+
+create TABLE client_query
+(
+	cq_id int AUTO_INCREMENT PRIMARY KEY,
+    cq_name varchar(50),
+    cq_email varchar(50),
+    cq_subject varchar(100),
+    cq_message varchar(1000),
+    cq_createDT timestamp
+)
+
+client login from WEB
+create TABLE clients 
+(
+ 	cl_id int AUTO_INCREMENT Primary key,
+    cl_fname varchar(50),
+    cl_email varchar(50),
+    cl_password varchar(50),
+    cl_phone varchar(20),
+    cl_createDT timestamp
+)
